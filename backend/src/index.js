@@ -20,7 +20,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const frontendPath = path.join(__dirname, "../../frontend/dist");
-
+app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }),clerkWebhook);
 app.use(express.static(frontendPath));
 
 app.get("/*splat", (req, res) => {
@@ -29,7 +29,7 @@ app.get("/*splat", (req, res) => {
 
 
 
-// app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }),clerkWebhook);
+
 
 app.use(express.json())
 app.use(cors({origin:FRONTEND_URL, credentials:true}));
