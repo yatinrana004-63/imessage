@@ -29,7 +29,7 @@ app.get("/*splat", (req, res) => {
 
 
 
-app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }),clerkWebhook);
+// app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }),clerkWebhook);
 
 app.use(express.json())
 app.use(cors({origin:FRONTEND_URL, credentials:true}));
