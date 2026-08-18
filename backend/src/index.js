@@ -7,7 +7,7 @@ import {clerkMiddleware} from "@clerk/express";
 import cors from "cors";
 import fs from "fs";
 import path from "path";
-// import job from "./lib/cron.js";
+import job from "./lib/cron.js";
 // import clerkWebhook from "./webhooks/clerk.webhook.js";
 const app = express();
 import { fileURLToPath } from "url";
@@ -52,8 +52,8 @@ if (fs.existsSync(publicDir)) {
 app.listen(PORT, () => {
   connectDb();
   console.log(`Server is running on http://localhost:${PORT}`);
-  // job.start()
-  // if(process.env.NODE_ENV === "production"){
-  //   job.start();
-  // }
+  job.start()
+  if(process.env.NODE_ENV === "production"){
+    job.start();
+  }
 });
