@@ -1,7 +1,7 @@
 // const express = require('express');
 import express from "express";
 import "dotenv/config";
-import User from "./models/User.model.js";
+import User from "./models/user.models.js";
 import { connectDb } from "./lib/db.js";
 import {clerkMiddleware} from "@clerk/express";
 import cors from "cors";
