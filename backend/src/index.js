@@ -53,7 +53,7 @@ app.listen(PORT, () => {
   connectDb();
   console.log(`Server is running on http://localhost:${PORT}`);
   // job.start()
-  if(process.env.NODE_ENV === "production"){
-    job.start();
-  }
+  // if(process.env.NODE_ENV === "production"){
+  //   job.start();
+  // }
 });
